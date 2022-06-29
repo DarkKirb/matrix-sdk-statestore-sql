@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"mod":[["client_secret",""],["device_key_id",""],["error","Error conditions."],["event_id",""],["key_id",""],["mxc_uri",""],["room_alias_id",""],["room_id",""],["room_id_or_alias_id",""],["room_name",""],["room_version_id",""],["server_name",""],["session_id",""],["user_id",""]]};

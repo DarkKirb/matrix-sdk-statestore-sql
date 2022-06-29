@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"trait":[["Value","An owned value from the database."],["ValueRef","A reference to a single value from the database."]]};

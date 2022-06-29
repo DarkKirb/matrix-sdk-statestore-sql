@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":[["JsonValue","Represents any valid JSON value."]],"struct":[["Json",""],["JsonRawValue","Reference to a range of bytes encompassing a single valid JSON value in the input data."]],"trait":[["Type","Indicates that a SQL type is supported for a database."]]};

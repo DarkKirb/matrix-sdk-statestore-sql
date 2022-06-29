@@ -1,0 +1,67 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Verifies that the signed event contains all the required valid signatures."><meta name="keywords" content="rust, rustlang, rust-lang, verify_event"><title>verify_event in ruma::signatures - Rust</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" type="text/css" href="../../normalize.css"><link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../ayu.css" disabled><link rel="stylesheet" type="text/css" href="../../dark.css" disabled><link rel="stylesheet" type="text/css" href="../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../storage.js"></script><script defer src="sidebar-items.js"></script><script defer src="../../main.js"></script><noscript><link rel="stylesheet" href="../../noscript.css"></noscript><link rel="icon" href="https://www.ruma.io/favicon.ico"></head><body class="rustdoc fn"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle">&#9776;</button><a class="sidebar-logo" href="../../ruma/index.html"><div class="logo-container"><img src="https://www.ruma.io/images/logo.png" alt="logo"></div>
+        </a><h2 class="location"></h2>
+    </nav>
+    <nav class="sidebar"><a class="sidebar-logo" href="../../ruma/index.html"><div class="logo-container">
+                    <img src="https://www.ruma.io/images/logo.png" alt="logo"></div>
+        </a><div class="sidebar-elems"><h2 class="location"><a href="index.html">In ruma::signatures</a></h2></div></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container" href="../../ruma/index.html">
+                        <img src="https://www.ruma.io/images/logo.png" alt="logo"></a><nav class="sub"><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><button type="button">?</button></div><div id="settings-menu" tabindex="-1">
+                                <a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div>
+                        </div></form></nav></div><section id="main-content" class="content"><div class="main-heading">
+    <h1 class="fqn"><span class="in-band">Function <a href="../index.html">ruma</a>::<wbr><a href="index.html">signatures</a>::<wbr><a class="fn" href="#">verify_event</a><button id="copy-path" onclick="copy_path(this)" title="Copy item path to clipboard"><img src="../../clipboard.svg" width="19" height="18" alt="Copy item path"></button></span></h1><span class="out-of-band"><a class="srclink" href="../../src/ruma_signatures/functions.rs.html#596-600">source</a> · <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">[<span class="inner">&#x2212;</span>]</a></span></div><div class="docblock item-decl"><pre class="rust fn"><code>pub fn verify_event(<br>&nbsp;&nbsp;&nbsp;&nbsp;public_key_map: &amp;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/collections/btree/map/struct.BTreeMap.html" title="struct alloc::collections::btree::map::BTreeMap">BTreeMap</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>, <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/collections/btree/map/struct.BTreeMap.html" title="struct alloc::collections::btree::map::BTreeMap">BTreeMap</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>, <a class="struct" href="../serde/struct.Base64.html" title="struct ruma::serde::Base64">Base64</a>&lt;<a class="struct" href="../serde/base64/struct.Standard.html" title="struct ruma::serde::base64::Standard">Standard</a>, <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>, <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/alloc/struct.Global.html" title="struct alloc::alloc::Global">Global</a>&gt;&gt;, <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/alloc/struct.Global.html" title="struct alloc::alloc::Global">Global</a>&gt;, <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/alloc/struct.Global.html" title="struct alloc::alloc::Global">Global</a>&gt;, <br>&nbsp;&nbsp;&nbsp;&nbsp;object: &amp;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/collections/btree/map/struct.BTreeMap.html" title="struct alloc::collections::btree::map::BTreeMap">BTreeMap</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>, <a class="enum" href="enum.CanonicalJsonValue.html" title="enum ruma::signatures::CanonicalJsonValue">CanonicalJsonValue</a>, <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/alloc/struct.Global.html" title="struct alloc::alloc::Global">Global</a>&gt;, <br>&nbsp;&nbsp;&nbsp;&nbsp;version: &amp;<a class="enum" href="../enum.RoomVersionId.html" title="enum ruma::RoomVersionId">RoomVersionId</a><br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="enum" href="enum.Verified.html" title="enum ruma::signatures::Verified">Verified</a>, <a class="enum" href="enum.Error.html" title="enum ruma::signatures::Error">Error</a>&gt;</code></pre></div><details class="rustdoc-toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>Verifies that the signed event contains all the required valid signatures.</p>
+<p>Some room versions may require signatures from multiple homeservers, so this function takes a
+map from servers to sets of public keys. Signatures are verified for each required homeserver.
+All known public keys for a homeserver should be provided. The first one found on the given
+event will be used.</p>
+<p>If the <code>Ok</code> variant is returned by this function, it will contain a <code>Verified</code> value which
+distinguishes an event with valid signatures and a matching content hash with an event with
+only valid signatures. See the documentation for <code>Verified</code> for details.</p>
+<h2 id="parameters"><a href="#parameters">Parameters</a></h2>
+<ul>
+<li>public_key_map: A map from entity identifiers to a map from key identifiers to public keys.
+Generally, entity identifiers are server names—the host/IP/port of a homeserver (e.g.
+“example.com”) for which a signature must be verified. Key identifiers for each server (e.g.
+“ed25519:1”) then map to their respective public keys.</li>
+<li>object: The JSON object of the event that was signed.</li>
+<li>version: Room version of the given event</li>
+</ul>
+<h2 id="examples"><a href="#examples">Examples</a></h2>
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">const</span> <span class="ident">PUBLIC_KEY</span>: <span class="kw-2">&amp;</span>[<span class="ident">u8</span>] <span class="op">=</span> <span class="string">b&quot;XGX0JRS2Af3be3knz2fBiRbApjm2Dh61gXDJA8kcJNI&quot;</span>;
+
+<span class="comment">// Deserialize an event from JSON.</span>
+<span class="kw">let</span> <span class="ident">object</span> <span class="op">=</span> <span class="ident">serde_json::from_str</span>(
+    <span class="string">r#&quot;{
+        &quot;auth_events&quot;: [],
+        &quot;content&quot;: {},
+        &quot;depth&quot;: 3,
+        &quot;hashes&quot;: {
+            &quot;sha256&quot;: &quot;5jM4wQpv6lnBo7CLIghJuHdW+s2CMBJPUOGOC89ncos&quot;
+        },
+        &quot;origin&quot;: &quot;domain&quot;,
+        &quot;origin_server_ts&quot;: 1000000,
+        &quot;prev_events&quot;: [],
+        &quot;room_id&quot;: &quot;!x:domain&quot;,
+        &quot;sender&quot;: &quot;@a:domain&quot;,
+        &quot;signatures&quot;: {
+            &quot;domain&quot;: {
+                &quot;ed25519:1&quot;: &quot;KxwGjPSDEtvnFgU00fwFz+l6d2pJM6XBIaMEn81SXPTRl16AqLAYqfIReFGZlHi5KLjAWbOoMszkwsQma+lYAg&quot;
+            }
+        },
+        &quot;type&quot;: &quot;X&quot;,
+        &quot;unsigned&quot;: {
+            &quot;age_ts&quot;: 1000000
+        }
+    }&quot;#</span>
+).<span class="ident">unwrap</span>();
+
+<span class="comment">// Create the `PublicKeyMap` that will inform `verify_json` which signatures to verify.</span>
+<span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">public_key_set</span> <span class="op">=</span> <span class="ident">BTreeMap::new</span>();
+<span class="ident">public_key_set</span>.<span class="ident">insert</span>(<span class="string">&quot;ed25519:1&quot;</span>.<span class="ident">into</span>(), <span class="ident">Base64::parse</span>(<span class="ident">PUBLIC_KEY</span>.<span class="ident">to_owned</span>()).<span class="ident">unwrap</span>());
+<span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">public_key_map</span> <span class="op">=</span> <span class="ident">BTreeMap::new</span>();
+<span class="ident">public_key_map</span>.<span class="ident">insert</span>(<span class="string">&quot;domain&quot;</span>.<span class="ident">into</span>(), <span class="ident">public_key_set</span>);
+
+<span class="comment">// Verify at least one signature for each entity in `public_key_map`.</span>
+<span class="kw">let</span> <span class="ident">verification_result</span> <span class="op">=</span> <span class="ident">verify_event</span>(<span class="kw-2">&amp;</span><span class="ident">public_key_map</span>, <span class="kw-2">&amp;</span><span class="ident">object</span>, <span class="kw-2">&amp;</span><span class="ident">RoomVersionId::V6</span>);
+<span class="macro">assert!</span>(<span class="ident">verification_result</span>.<span class="ident">is_ok</span>());
+<span class="macro">assert_eq!</span>(<span class="ident">verification_result</span>.<span class="ident">unwrap</span>(), <span class="ident">Verified::All</span>);</code></pre></div>
+</div></details></section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="ruma" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.64.0-nightly (830880640 2022-06-28)" ></div>
+</body></html>

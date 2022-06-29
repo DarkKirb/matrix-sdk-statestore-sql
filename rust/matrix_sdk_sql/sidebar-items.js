@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":[["SQLStoreError","Errors that can occur in the SQL Store"]],"fn":[["store_config","Creates a new store confiig"]],"struct":[["StateStore","SQL State Storage for matrix-sdk"]],"type":[["Result","Result type returned by SQL Store functions"]]};
