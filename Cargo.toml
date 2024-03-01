@@ -58,7 +58,7 @@ features = ["Debug"]
 optional = true
 
 [dependencies.sqlx]
-version = "0.6.0, <0.6.2"      # 0.6.2 is a breaking change
+version = "0.6.2"      # 0.6.2 is a breaking change
 features = ["migrate", "json"]
 
 [dependencies.sqlx-core]
